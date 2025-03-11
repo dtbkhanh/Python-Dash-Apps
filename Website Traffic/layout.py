@@ -65,7 +65,7 @@ def create_layout(app):
         
         #### VISUALIZATION SECTION ####
         dbc.Row([
-            #  Pie Chart: Traffic Source Distribution
+            # Pie Chart: Traffic Source Distribution
             dbc.Col([
                 html.H3('Traffic Source Distribution'),
                 dcc.Graph(
@@ -73,7 +73,6 @@ def create_layout(app):
                     figure=px.pie(
                         values=viz_data['traffic_source_counts'].values, 
                         names=viz_data['traffic_source_counts'].index, 
-                        title='Traffic Source Distribution'
                     )
                 )
             ], width=6),
@@ -85,7 +84,6 @@ def create_layout(app):
                     id='session-duration-hist',
                     figure=px.histogram(
                         x=viz_data['session_duration_distribution'], 
-                        title='Session Duration Distribution',
                         labels={'x': 'Session Duration (mins)'}
                     )
                 )
@@ -101,8 +99,8 @@ def create_layout(app):
                     figure=px.bar(
                         x=viz_data['conversion_rate_by_source'].index, 
                         y=viz_data['conversion_rate_by_source'].values, 
-                        title='Conversion Rate by Traffic Source',
-                        labels={'x': 'Traffic Source', 'y': 'Conversion Rate'}
+                        labels={'x': 'Traffic Source', 'y': 'Conversion Rate'},
+                        title=""
                     )
                 )
             ], width=6),
@@ -126,7 +124,6 @@ def create_layout(app):
                             marker_color='rgba(54, 162, 235, 0.6)'
                         )
                     ], layout=go.Layout(
-                        title='Bounce Rate vs Conversion Rate by Traffic Source',
                         barmode='group',
                         xaxis_title='Traffic Source',
                         yaxis_title='Rate (%)'
@@ -139,5 +136,5 @@ def create_layout(app):
     style={
         'margin': '20px auto',
         'max-width': '95%'
-    }   
+    }    
     )

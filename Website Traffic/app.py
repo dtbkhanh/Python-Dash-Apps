@@ -7,7 +7,7 @@ from layout import create_layout
 from callbacks import register_callbacks
 
 # Initialize the app
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(external_stylesheets=[dbc.themes.MINTY])
 
 # Set up layout
 app.layout = create_layout(app)
